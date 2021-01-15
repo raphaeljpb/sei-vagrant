@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -e
 
-VERSAO_CONTAINERS='8.0'
+VERSAO_CONTAINERS='8.1'
 
 #vagrant destroy
 
@@ -53,30 +53,30 @@ docker tag sei3_memcached  guilhermeadc/sei3_memcached:latest
 docker tag sei3_memcached  guilhermeadc/sei3_memcached:$VERSAO_CONTAINERS
 cd ..
 
-cd sqlserver
-docker build -t sei3_sqlserver-2017 .
-docker tag sei3_sqlserver-2017 guilhermeadc/sei3_sqlserver-2017:latest
-docker tag sei3_sqlserver-2017 guilhermeadc/sei3_sqlserver-2017:$VERSAO_CONTAINERS
-cd ..
+# cd sqlserver
+# docker build -t sei3_sqlserver-2017 .
+# docker tag sei3_sqlserver-2017 guilhermeadc/sei3_sqlserver-2017:latest
+# docker tag sei3_sqlserver-2017 guilhermeadc/sei3_sqlserver-2017:$VERSAO_CONTAINERS
+# cd ..
 
-docker push guilhermeadc/sei3_solr-6.1:$VERSAO_CONTAINERS
-docker push guilhermeadc/sei3_jod-2.2.2:$VERSAO_CONTAINERS
-docker push guilhermeadc/sei3_mysql-5.7:$VERSAO_CONTAINERS
-docker push guilhermeadc/sei3_oracle-11g:$VERSAO_CONTAINERS
-docker push guilhermeadc/sei3_httpd-2.4:$VERSAO_CONTAINERS
-docker push guilhermeadc/sei3_mailcatcher:$VERSAO_CONTAINERS
-docker push guilhermeadc/sei3_memcached:$VERSAO_CONTAINERS
-docker push guilhermeadc/sei3_sqlserver-2017:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_solr-6.1:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_jod-2.2.2:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_mysql-5.7:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_oracle-11g:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_httpd-2.4:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_mailcatcher:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_memcached:$VERSAO_CONTAINERS
+# docker push guilhermeadc/sei3_sqlserver-2017:$VERSAO_CONTAINERS
 
-docker push guilhermeadc/sei3_solr-6.1:latest
-docker push guilhermeadc/sei3_jod-2.2.2:latest
-docker push guilhermeadc/sei3_mysql-5.7:latest
-docker push guilhermeadc/sei3_oracle-11g:latest
-docker push guilhermeadc/sei3_httpd-2.4:latest
-docker push guilhermeadc/sei3_mailcatcher:latest
-docker push guilhermeadc/sei3_memcached:latest
-docker push guilhermeadc/sei3_sqlserver-2017:latest
+# docker push guilhermeadc/sei3_solr-6.1:latest
+# docker push guilhermeadc/sei3_jod-2.2.2:latest
+# docker push guilhermeadc/sei3_mysql-5.7:latest
+# docker push guilhermeadc/sei3_oracle-11g:latest
+# docker push guilhermeadc/sei3_httpd-2.4:latest
+# docker push guilhermeadc/sei3_mailcatcher:latest
+# docker push guilhermeadc/sei3_memcached:latest
+# docker push guilhermeadc/sei3_sqlserver-2017:latest
 
-sudo packer build --force sei-vagrant.json
+# sudo packer build --force sei-vagrant.json
 
 exit 0

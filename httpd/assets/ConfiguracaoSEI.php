@@ -16,15 +16,16 @@ class ConfiguracaoSEI extends InfraConfiguracao  {
 			'SEI' => array(
 				'URL' => getenv('HOST_URL').'/sei',
 				'Producao' => false,
-				'RepositorioArquivos' => '/var/sei/arquivos',
-				
+				'RepositorioArquivos' => '/var/sei/arquivos',				
 				'DigitosDocumento' => 7,
 				'NumLoginUsuarioExternoSemCaptcha' => 3,
 				'TamSenhaUsuarioExterno' => 8,
 				'DebugWebServices' => 2,
 				'MaxMemoriaPdfGb' => 4,
-				'Modulos' => array(
-					// 'ABCExemploIntegracao' => 'abc/exemplo',
+				'Modulos' => 
+					array('MdWsSeiRest' => 'wssei', 'MdOuvidoriaAvaliacaoAtendimentoIntegracao' => 'treto/ouvidoria_avaliacao_atendimento',
+	          		'PesquisaIntegracao' => 'pesquisa', 
+	          		'MdTretoArvoreDocumentoSiglaUnidadeIntegracao' => 'treto/arvore_documento_sigla_unidade')
 				),			   
 			),
 			
@@ -42,6 +43,11 @@ class ConfiguracaoSEI extends InfraConfiguracao  {
 				'LogoMenu' => '', 
 				'OrgaoTopoJanela' => 'S',
 			),
+
+	      'Editor' => array(
+ 	          'Edoc' => false,
+ 	          'CarregarAgenteEdoc' => false,
+ 	          'Interno' => true), 			
 			
 			'BancoSEI'  => array(
 				'Servidor' => getenv('DATABASE_HOST'),

@@ -31,4 +31,5 @@ RUN ["/usr/local/bin/docker-entrypoint.sh", "mysqld", "--datadir", "/initialized
 # EXPOSE 3306
 
 FROM mysql:5.7
+COPY --from=builder /etc/mysql/mysql.conf.d/sei.cnf /etc/mysql/mysql.conf.d/sei.cnf
 COPY --from=builder /initialized-db /var/lib/mysql

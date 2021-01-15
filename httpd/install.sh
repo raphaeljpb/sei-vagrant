@@ -45,3 +45,4 @@ yum clean all
 
 # Configuração de permissões de execução no script de inicialização do container
 chmod +x /entrypoint.sh
+
