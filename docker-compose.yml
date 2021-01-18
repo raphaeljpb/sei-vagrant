@@ -32,15 +32,13 @@ services:
       - "8983:8983"
 
   http:
-    image: guilhermeadc/sei3_httpd-2.4:${ENVIRONMENT_VERSION}
+    image: raphaeljpb/sei-tre-pe:latest
     container_name: http
     restart: on-failure
     ports:
       - "8080:8080"
     depends_on: 
       - database
-    volumes:
-      - /c/Users/rapha/Desenvolvimento/sei:/opt
     environment:
       - XDEBUG_CONFIG="idekey=default remote_enable=1 remote_mode=req remote_port=9000 remote_host=10.0.2.2 remote_connect_back=1"
       - HOST_URL=http://localhost:8080
